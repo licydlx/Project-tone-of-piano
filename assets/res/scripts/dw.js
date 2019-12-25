@@ -7,7 +7,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() { 
+    onLoad() {
         this.createTag = true;
     },
 
@@ -17,11 +17,11 @@ cc.Class({
             contact.disabled = true;
         }
 
-        if (selfCollider.tag == 2 &&　otherCollider.tag == 4 && this.node.y < -3000) {
+        if (selfCollider.tag == 2 && otherCollider.tag == 4 && this.node.y < -3000) {
             if (this.createTag) {
                 this.createTag = false;
-                let studyJs = cc.find("root/studyBox").getComponent("studyBox")
-                studyJs.createSugar(null, 0) 
+                let studyJs = cc.find("root/studyBox").getComponent("studyBox");
+                studyJs.createSugar(null, 0);
             }
         }
 

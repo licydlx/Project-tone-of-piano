@@ -1,3 +1,4 @@
+const { dispatchFn } = require("untils");
 
 cc.Class({
     extends: cc.Component,
@@ -29,6 +30,7 @@ cc.Class({
         }
     },
 
+    
     // 只在两个碰撞体结束接触时被调用一次
     onEndContact: function (contact, selfCollider, otherCollider) {
     },
