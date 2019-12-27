@@ -15,9 +15,7 @@ cc.Class({
         }
     },
 
-    // LIFE-CYCLE CALLBACKS:
-
-    onLoad() { 
+    onLoad() {
         this.tag = true;
         this.flag = true;
     },
@@ -29,9 +27,9 @@ cc.Class({
     },
 
     update(dt) {
-        this.node.x -= 100*dt;
+        this.node.x -= window.noteSpeed * window.noteRate * dt;
 
-        if (this.node.x < 700 && this.flag) {
+        if (this.node.x < 764 && this.flag) {
             this.flag = false;
             dispatchFn(this.node, "createSugar", "");
         }

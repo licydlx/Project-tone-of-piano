@@ -1,9 +1,9 @@
 cc.Class({
     extends: cc.Component,
-    onLoad() {},
+    onLoad() { },
 
     update(dt) {
-        this.node.x -= 100 * dt;
+        this.node.x -= window.noteSpeed * window.noteRate * dt;
 
         if (this.node.x < -900) {
             this.node.destroy();

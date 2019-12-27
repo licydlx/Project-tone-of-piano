@@ -15,14 +15,10 @@ cc.Class({
             displayName: "学习系统"
         },
 
-        launchs: {
+        launchSweets: {
             default: [],
-            type: [cc.Node]
-        },
-
-        launchCam: {
-            default: null,
-            type: cc.Node
+            type: [cc.Node],
+            displayName: "启动糖果"
         },
 
         wallSwitchs: {
@@ -30,9 +26,10 @@ cc.Class({
             type: [cc.Node]
         },
 
-        sweetCon: {
+        sweetBox: {
             default: null,
-            type: cc.Node
+            type: cc.Node,
+            displayName: "糖果盒子"
         },
 
         pointer: {
@@ -55,13 +52,23 @@ cc.Class({
 
         sweetPrefab: {
             default: null,
-            type: cc.Prefab
+            type: cc.Prefab,
+            displayName: "糖果预制件"
         }
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
+        window.noteSpeed = 200;
+        window.noteRate = 1;
+
+        // 碰撞及物理设置
+        cc.director.getPhysicsManager().enabled = true;
+
+        // 开始按钮无线旋转
+        this.startBut.runAction(cc.repeatForever(cc.rotateBy(2.0, 360)));
+
         // 糖果对象池
         this.sweetPool = new cc.NodePool();
         let initCount = 60;
@@ -69,13 +76,6 @@ cc.Class({
             let sweet = cc.instantiate(this.sweetPrefab);
             this.sweetPool.put(sweet);
         }
-
-        this.tag = true;
-        this.startBut.runAction(cc.repeatForever(cc.rotateBy(2.0, 360)));
-
-        cc.director.getPhysicsManager().enabled = true;
-        this.num = 0;
-        this.heightRule = 2126;
 
         // 绑定 乐曲
         if (this.modalTrigger.children.length > 0) {
@@ -91,6 +91,7 @@ cc.Class({
     },
 
     start() {
+        // 定时执行
         let interval = .2;
         let repeat = 24;
         let delay = .2;
@@ -109,7 +110,7 @@ cc.Class({
             sweet = cc.instantiate(this.sweetPrefab);
         }
 
-        sweet.parent = this.sweetCon;
+        sweet.parent = this.sweetBox;
         if (pos) {
             sweet.position = pos;
         }
@@ -124,12 +125,32 @@ cc.Class({
     controlSpeed(e, ced) {
         if (ced) {
             this.pointer.runAction(cc.rotateTo(1, ced));
+
+            switch (ced) {
+                case '45':
+                    window.noteRate = 2;
+                    break;
+                case '22.5':
+                    window.noteRate = 1;
+                    break;
+                case '0':
+                    window.noteRate = 1/2;
+                    break;
+                case '-22.5':
+                    window.noteRate = 1/4;
+                    break;    
+                case '-45':
+                    window.noteRate = 1/8;
+                    break;      
+                default:
+                    break;
+            }
         }
     },
 
     // 启动动画
     launchAni() {
-            let camJs = cc.find("camera").getComponent("cam-control");
+            let camJs = cc.find("camera").getComponent("camera-control");
             camJs.followTarget();
             for (let i = 0; i < 3; i++) {
                 this.wallSwitchs[i].destroy();

@@ -13,7 +13,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        this.tag = true;
+        this.flag = true;
         let spr = this.getComponent(cc.Sprite);
         spr.spriteFrame = this.sweetFrames[Math.floor(Math.random() * 12)];
         this.pcc = this.node.getComponent(cc.PhysicsCircleCollider);
@@ -30,7 +30,7 @@ cc.Class({
         }
     },
 
-    
+
     // 只在两个碰撞体结束接触时被调用一次
     onEndContact: function (contact, selfCollider, otherCollider) {
     },
@@ -44,7 +44,7 @@ cc.Class({
     },
 
     update(dt) {
-        if (this.tag) {
+        if (this.flag) {
             if (this.node.y < -1500) {
                 if (this.node.x < -200) {
                     this.pcc.tag = 1;
@@ -53,7 +53,7 @@ cc.Class({
                 } else {
                     this.pcc.tag = 2;
                 }
-                this.tag = false;
+                this.flag = false;
             }
         }
     }
