@@ -29,17 +29,14 @@ cc.Class({
     update(dt) {
         this.node.x -= window.noteSpeed * window.noteRate * dt;
 
-        if (this.node.x < 764 && this.flag) {
-            this.flag = false;
-            dispatchFn(this.node, "createSugar", "");
-        }
-
-        if (this.node.x < -520 && this.tag) {
+        if (this.node.x < -460 && this.tag) {
             this.tag = false;
-            this.node.runAction(cc.fadeTo(1.0, 0));
+            this.node.runAction(cc.fadeTo(.5, 0));
+            dispatchFn(this.node, "monster", "");
+
             setTimeout(() => {
                 this.node.destroy();
-            }, 1000);
+            }, 500);
         }
 
     },

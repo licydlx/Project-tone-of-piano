@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "f2e78f93-2611-4709-8e64-775d74cf47be",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "小怪物2-2": {
+      "ver": "1.0.4",
+      "uuid": "7588d876-1a61-40f2-81af-355529e69008",
+      "rawTextureUuid": "f2e78f93-2611-4709-8e64-775d74cf47be",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -1,
+      "trimX": 8,
+      "trimY": 2,
+      "width": 255,
+      "height": 226,
+      "rawWidth": 270,
+      "rawHeight": 228,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

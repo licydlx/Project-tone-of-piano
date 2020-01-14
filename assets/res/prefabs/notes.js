@@ -38,7 +38,10 @@ cc.Class({
 
     onCollisionEnter: function (other, self) {
         if (Object.is(other.tag, 1)) {
-            dispatchFn(this.node, "addState", { id: this.node.noteId, used: false });
+            if (self.node.noteTag !== '-') {
+                dispatchFn(this.node, "addState", { id: this.node.noteId, used: false });
+            }
+            
             // switch (self.node.noteTag) {
             //     case 'c,4':
             //         window.noteSpeed = 200;
@@ -63,14 +66,17 @@ cc.Class({
     },
 
     onCollisionExit: function (other, self) {
-        dispatchFn(this.node, "removeState", '');
+        if (self.node.noteTag !== '-') {
+            dispatchFn(this.node, "removeState", { id: this.node.noteId });
+        }
+        this.node.runAction(cc.fadeOut(1))
     },
 
     update(dt) {
-        this.node.x -= window.noteSpeed * window.noteRate * dt * 1/2;
+        // this.node.x -= window.noteSpeed * window.noteRate * dt * 1/2;
 
-        if (this.node.x < 150) {
-            this.node.destroy();
-        }
+        // if (this.node.x < 150) {
+        //     this.node.destroy();
+        // }
     },
 });

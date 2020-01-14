@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "b915e4cf-9340-424a-a17b-29a8f0533d09",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "小怪物3吃-4 ": {
+      "ver": "1.0.4",
+      "uuid": "a6737bb5-4e37-45a2-ac98-a964a2a282d3",
+      "rawTextureUuid": "b915e4cf-9340-424a-a17b-29a8f0533d09",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": -0.5,
+      "trimX": 5,
+      "trimY": 2,
+      "width": 243,
+      "height": 256,
+      "rawWidth": 255,
+      "rawHeight": 259,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

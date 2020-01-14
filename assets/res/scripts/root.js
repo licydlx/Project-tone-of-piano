@@ -60,7 +60,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        window.noteSpeed = 200;
+        window.noteSpeed = 320;
         window.noteRate = 1;
 
         // 碰撞及物理设置

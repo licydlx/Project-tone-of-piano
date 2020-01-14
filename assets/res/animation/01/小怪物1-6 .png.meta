@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "5fb373a9-eba4-477b-8348-9984939e4853",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "小怪物1-6 ": {
+      "ver": "1.0.4",
+      "uuid": "cd250a14-2521-4456-8d48-d375aee3e21d",
+      "rawTextureUuid": "5fb373a9-eba4-477b-8348-9984939e4853",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -2.5,
+      "trimX": 4,
+      "trimY": 5,
+      "width": 235,
+      "height": 263,
+      "rawWidth": 240,
+      "rawHeight": 268,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
